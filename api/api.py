@@ -20,8 +20,8 @@ db.init_app(app)
 class Set(db.Model):
     __tablename__ = "sets"
     setId: Mapped[str] = mapped_column(primary_key=True)
-    player1Username: Mapped[str]
-    player2Username: Mapped[str]
+    player1Username: Mapped[str] = mapped_column(index=True)
+    player2Username: Mapped[str] = mapped_column(index=True)
     player1Wins: Mapped[int]
     player2Wins: Mapped[int]
     datePlayed: Mapped[str]
